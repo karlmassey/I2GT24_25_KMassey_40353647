@@ -23,6 +23,5 @@ public class PlayerController : MonoBehaviour
         // Allow the user to turn the vehicle using horizontal input
         _horizontalInput = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up, Time.deltaTime * _turnSpeed * _horizontalInput);
-
     }
 }
