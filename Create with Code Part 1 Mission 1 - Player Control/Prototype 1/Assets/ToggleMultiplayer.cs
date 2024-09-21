@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class MultiplayerToggle : MonoBehaviour
 
     public GameObject player2;
     public GameObject player2CameraManager;
+    public GameObject player2TopViewCamera;
+    public GameObject player2FrontViewCamera;
 
     private void Update()
     {
@@ -39,22 +42,19 @@ public class MultiplayerToggle : MonoBehaviour
             player2CameraManager.SetActive(true);
 
             AdjustCameraWidth(0.5f);
+            SyncPlayerCameras();
         }
     }
 
     private void AdjustCameraWidth(float width)
     {
-        Camera camera;
+        player1FrontViewCamera.GetComponent<Camera>().rect = new Rect(0, 0, width, 1);
+        player1TopViewCamera.GetComponent<Camera>().rect = new Rect(0, 0, width, 1);
+    }
 
-        if (player1FrontViewCamera.activeSelf)
-        {
-            camera = player1FrontViewCamera.GetComponent<Camera>();
-            camera.rect = new Rect(0, 0, width, 1);
-        }
-        else
-        {
-            camera = player1TopViewCamera.GetComponent<Camera>();
-            camera.rect = new Rect(0, 0, width, 1);
-        }
+    private void SyncPlayerCameras()
+    {
+        player2FrontViewCamera.SetActive(player1FrontViewCamera.activeSelf);
+        player2TopViewCamera.SetActive(player1TopViewCamera.activeSelf);
     }
 }

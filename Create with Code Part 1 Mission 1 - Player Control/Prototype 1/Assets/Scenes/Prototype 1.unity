@@ -2143,6 +2143,8 @@ MonoBehaviour:
   player1FrontViewCamera: {fileID: 637398895}
   player2: {fileID: 1253984465}
   player2CameraManager: {fileID: 296095436}
+  player2TopViewCamera: {fileID: 110752903}
+  player2FrontViewCamera: {fileID: 91454115}
 --- !u!4 &981213405
 Transform:
   m_ObjectHideFlags: 0
