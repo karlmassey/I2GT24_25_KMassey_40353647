@@ -21,7 +21,5 @@ public class PlayerController : MonoBehaviour
 
         // Move the plane forward at a constant rate
         transform.Translate(Vector3.forward * Time.deltaTime * _speed);
-
-       
     }
 }
