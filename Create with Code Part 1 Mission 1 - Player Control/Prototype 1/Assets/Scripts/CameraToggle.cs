@@ -7,10 +7,13 @@ public class CameraToggle : MonoBehaviour
     public GameObject topViewCamera;
     public GameObject frontViewCamera;
 
+    [SerializeField]
+    private KeyCode _toggleKey;
+
     private void Update()
     {
-        // Check if the space bar is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Check if the appropriate key is pressed
+        if (Input.GetKeyDown(_toggleKey))
         {
             ToggleCameraView();
         }

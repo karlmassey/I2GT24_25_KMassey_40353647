@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NonPlayerVehicle : MonoBehaviour
+public class MoveForward : MonoBehaviour
 {
     private float _speed = 30f;
 
