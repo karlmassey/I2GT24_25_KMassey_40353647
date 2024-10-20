@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private float _maxZ = 15.5f;
 
     public GameObject projectilePrefab;
-
+    public Transform projectileSpawnPoint;
 
     void Start()
     {
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, projectileSpawnPoint.position, projectilePrefab.transform.rotation);
         }
     }
 }
