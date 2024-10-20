@@ -21,6 +21,10 @@ public class CameraToggle : MonoBehaviour
 
     private void ToggleCameraView()
     {
+
+        // topViewCamera.SetActive(!topViewCamera.activeSelf);
+        // frontViewCamera.SetActive(!frontViewCamera.activeSelf);
+
         if (topViewCamera.activeSelf)
         {
             topViewCamera.SetActive(false);
