@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
+    private GameManager gameManager;
+
     private float _topBound = 30.0f;
     private float _lowerBound = -10.0f;
     private float sideBound = 30f;
 
     void Start()
     {
-
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -21,17 +23,17 @@ public class DestroyOutOfBounds : MonoBehaviour
         }
         else if (transform.position.z < _lowerBound)
         {
-            Debug.Log("Game Over!");
+            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
         else if (transform.position.x > sideBound)
         {
-            Debug.Log("Game Over!");
+            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
         else if (transform.position.x < -sideBound)
         {
-            Debug.Log("Game Over!");
+            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
 
