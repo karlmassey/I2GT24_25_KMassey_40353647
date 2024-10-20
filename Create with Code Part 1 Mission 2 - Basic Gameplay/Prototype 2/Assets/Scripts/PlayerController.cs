@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
     public float verticalInput;
 
-    private float _speed = 10.0f;
+    private float _speed = 20.0f;
     private float _xRange = 20f;
 
     private float _minZ = -1f;
