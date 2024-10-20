@@ -25,9 +25,12 @@ public class DetectCollisions : MonoBehaviour
         }
         else if (other.CompareTag("Carrot"))
         {
-            gameManager.AddScore(5);
+           /* gameManager.AddScore(5);
             Destroy(gameObject);
-            Destroy(other.gameObject);
+            Destroy(other.gameObject);*/
+        
+            GetComponent<AnimalHunger>().FeedAnimal(1);
+            Destroy(other.gameObject);        
         }
     }
 }
